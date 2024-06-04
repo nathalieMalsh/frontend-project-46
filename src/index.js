@@ -1,22 +1,29 @@
 #!/usr/bin/env node
+import { getFullPath, getData } from "./utils.js";
+//import _ from 'lodash';
 
-import path from "path";
-import fs from "fs";
-import parse from './parse.js';
-
-const getFullPath = (filepath) => path.resolve(process.cwd(), filepath);
-const getFormat = (filepath) => path.extname(filepath).slice(1);
-const getData = (filepath) => parse(fs.readFileSync(filepath, 'utf-8'), getFormat(filepath));
-
-const gendiff = (filepath1, filepath2) => {
+const genDiff = (filepath1, filepath2) => {
   const fullPath1 = getFullPath(filepath1);
   const fullPath2 = getFullPath(filepath2);
   
   const data1 = getData(fullPath1);
   const data2 = getData(fullPath2);
-
-  console.log(data1);
-  console.log(data2);
+  
+  const keys = Object.keys({ ...data1, ...data2 }).sort();
+  const result = [];
+  for (const key of keys) {
+    if (!Object.hasOwn(data1, key)) {
+      result.push(`+ ${key}: ${data2[key]}`); //added
+    } else if (!Object.hasOwn(data2, key)) {
+      result.push(`- ${key}: ${data1[key]}`); //deleted
+    } else if (data1[key] !== data2[key]) {
+      result.push(`- ${key}: ${data1[key]}`); //changed
+      result.push(`+ ${key}: ${data2[key]}`);
+    } else {
+      result.push(`  ${key}: ${data1[key]}`); //unchanged
+    }
+  };
+  console.log(result.join('\n'));
 };
 
-export default gendiff;
+export default genDiff;

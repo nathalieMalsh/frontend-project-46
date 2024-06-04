@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import gendiff from "./src/index.js";
+import genDiff from "./src/index.js";
 
-export default gendiff;
+export default genDiff;
