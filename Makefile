@@ -1,9 +1,9 @@
-install:
+install: # установка зависимостей
 	npm ci
 
-lint: 
+lint: # запуск линтера
 	npx eslint .
 
- #перед этим использовать npm link
+# перед этим использовать npm link
 publish: #отладка публикации
 	npm publish --dry-run
