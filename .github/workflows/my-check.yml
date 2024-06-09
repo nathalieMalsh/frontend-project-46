@@ -1,7 +1,7 @@
-name: check project
+name: my-check
 on: push
 jobs:
-  check-project:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

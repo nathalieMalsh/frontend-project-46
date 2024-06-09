@@ -10,7 +10,8 @@ const genDiff = (filepath1, filepath2) => {
 
   const keys = Object.keys({ ...data1, ...data2 }).sort();
   const result = [];
-  for (const key of keys) {
+
+  keys.map((key) => {
     if (!Object.hasOwn(data1, key)) {
       result.push(`+ ${key}: ${data2[key]}`); // added
     } else if (!Object.hasOwn(data2, key)) {
@@ -21,8 +22,10 @@ const genDiff = (filepath1, filepath2) => {
     } else {
       result.push(`  ${key}: ${data1[key]}`); // unchanged
     }
-  }
-  console.log(result.join('\n'));
+    return result;
+  });
+
+  return result.join('\n');
 };
 
 export default genDiff;
