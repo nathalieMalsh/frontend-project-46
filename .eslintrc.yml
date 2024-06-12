@@ -9,7 +9,14 @@ rules: {
   'import/extensions': [
         'error',
         {
-            js: 'always',
+          js: 'always',
         },
   ],
+  'no-underscore-dangle': [
+        'error',
+        {
+          allow: ['__filename', '__dirname'],
+        },
+  ],
+  "no-undef": "off"
 }
