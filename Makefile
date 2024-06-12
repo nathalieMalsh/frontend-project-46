@@ -10,3 +10,6 @@ lint: # запуск линтера
 # перед этим использовать npm link
 publish: #отладка публикации
 	npm publish --dry-run
+
+test-coverage: # покрытие тестами
+	npm test -- --coverage --coverageProvider=v8
