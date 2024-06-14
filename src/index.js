@@ -24,8 +24,8 @@ const genDiff = (filepath1, filepath2) => {
     }
     return result;
   });
-
-  return result.join('\n');
+  console.log(`{\n${result.join('\n')}\n}`);
+  return `{\n${result.join('\n')}\n}`;
 };
 
 export default genDiff;
