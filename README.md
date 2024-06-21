@@ -7,4 +7,4 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/5c520531dc068f520fc1/test_coverage)](https://codeclimate.com/github/nathalieMalsh/frontend-project-46/test_coverage)
 
-[![asciicast](https://asciinema.org/a/sulTLp3jvelsW97hOCnnUPQnj.svg)](https://asciinema.org/a/sulTLp3jvelsW97hOCnnUPQnj)
+[![asciicast](https://asciinema.org/a/BBKJdRewMw37nGRJZscEBigRK.svg)](https://asciinema.org/a/BBKJdRewMw37nGRJZscEBigRK)

@@ -6,6 +6,7 @@ parserOptions:
   ecmaVersion: latest
   sourceType: module
 rules: {
+  'no-console': 'off',
   'import/extensions': [
         'error',
         {
@@ -18,5 +19,5 @@ rules: {
           allow: ['__filename', '__dirname'],
         },
   ],
-  "no-undef": "off"
+  'no-undef': 'off'
 }
