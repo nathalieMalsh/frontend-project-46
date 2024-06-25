@@ -38,3 +38,18 @@ describe('Plain', () => {
     expect(genDiff(path1, path2, 'plain')).toBe(expectedFile);
   });
 });
+
+describe('JSON', () => {
+  test('json', () => {
+    const path1 = getFixturePath('file1.json');
+    const path2 = getFixturePath('file2.json');
+    const expectedFile = readFile('expected_file_json.txt');
+    expect(genDiff(path1, path2, 'json')).toBe(expectedFile);
+  });
+  test('yaml', () => {
+    const path1 = getFixturePath('file1.yaml');
+    const path2 = getFixturePath('file2.yaml');
+    const expectedFile = readFile('expected_file_json.txt');
+    expect(genDiff(path1, path2, 'json')).toBe(expectedFile);
+  });
+});
