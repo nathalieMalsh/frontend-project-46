@@ -9,7 +9,7 @@ const getExtension = (filepath) => path.extname(filepath).slice(1);
 const getData = (filepath) => parse(fs.readFileSync(filepath, 'utf-8'), getExtension(filepath));
 
 const getDifferencesObject = (object1, object2) => {
-  const keys = Object.keys({ ...object1, ...object2 }).sort();
+  const keys = _.sortBy(Object.keys({ ...object1, ...object2 }));
 
   return keys.map((key) => {
     const oldValue = object1[key];
