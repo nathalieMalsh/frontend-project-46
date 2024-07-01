@@ -1,4 +1,5 @@
-import { getFullPath, getData, getDifferencesObject } from './utils.js';
+import { getFullPath, getData } from './utils.js';
+import getDifferencesObject from './getDifferencesObject.js';
 import getFormat from './formatters/index.js';
 
 const genDiff = (filepath1, filepath2, format = 'stylish') => {
